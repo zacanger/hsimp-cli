@@ -9,12 +9,17 @@ Does not send anything over the network, uses HSIMP libraries.
 
 --------
 
-## Installation
-
-`npm i -g hsimp-cli` (or use with `npx`)
-
 ## Usage
 
-`hsimp`
+```shell
+npx hsimp-cli
+```
+
+Or, to install
+
+```shell
+npm i -g hsimp-cli
+hsimp
+```
 
 [LICENSE](./LICENSE.md)
