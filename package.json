@@ -1,7 +1,7 @@
 {
   "name": "hsimp-cli",
   "description": "CLI for How Secure Is My Password",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": {
     "email": "zac@zacanger.com",
     "name": "Zac Anger",
