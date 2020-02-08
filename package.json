@@ -16,7 +16,9 @@
   "files": [
     "./index.js"
   ],
-  "bin": "./index.js",
+  "bin": {
+    "hsimp": "./index.js"
+  },
   "scripts": {
     "preversion": "npm t",
     "test": "npm run test:lint",
