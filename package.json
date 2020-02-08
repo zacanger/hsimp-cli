@@ -23,6 +23,7 @@
   "scripts": {
     "build": "tsc",
     "prebuild": "npm t",
+    "preversion": "npm run build",
     "test": "run-s -s test:ts test:lint",
     "test:lint": "eslint --ext .ts -c .eslintrc.json src/*.ts",
     "test:ts": "tsc --noEmit"
