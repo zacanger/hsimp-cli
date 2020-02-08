@@ -3,6 +3,8 @@
 const h = require('hsimp')
 const prompt = require('password-prompt')
 const colors = require('zeelib/lib/colorize').default
+const wordwrap = require('wordwrap')
+const wrap = wordwrap(80)
 
 const formatLevel = (level = 'secure') => {
   const l = level || 'secure'
@@ -34,13 +36,11 @@ const formatChecks = (checks = []) => {
         `
 ${formatLevel(level)}
 ${name}
-${message}
+${wrap(message)}
     `
     )
     .join('')
   return `
-----
-
 Checks:
 ${formattedChecks}
   `
@@ -48,8 +48,8 @@ ${formattedChecks}
 
 const formatAndLog = ({ time, level, checks = [] }) => {
   console.log('')
-  console.log(formatLevel(level))
-  console.log(`Time to crack: ${time}`)
+  console.log(colors.bold(formatLevel(level)))
+  console.log(colors.bold(`Time to crack: ${time}`))
   console.log(formatChecks(checks))
 }
 
