@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import h from 'hsimp'
 import prompt from 'password-prompt'
 import colors from 'zeelib/lib/colorize'
