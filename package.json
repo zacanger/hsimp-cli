@@ -15,7 +15,7 @@
   "main": "index.js",
   "bin": "./index.js",
   "scripts": {
-    "preversion": "sortpack && npm t",
+    "preversion": "npm t",
     "test": "npm run test:lint",
     "test:lint": "eslint -c .eslintrc.json *.js"
   },
