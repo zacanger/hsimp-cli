@@ -6,7 +6,8 @@ const colors = require('zeelib/lib/colorize').default
 const wordwrap = require('wordwrap')
 const wrap = wordwrap(80)
 
-const formatLevel = (level = 'secure') => {
+const formatLevel = (level) => {
+  // || instead of = above because possible null
   const l = level || 'secure'
   const cased = l.charAt(0).toUpperCase() + l.slice(1)
   switch (cased) {
