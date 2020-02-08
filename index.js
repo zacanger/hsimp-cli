@@ -4,19 +4,63 @@ const h = require('hsimp')
 const prompt = require('password-prompt')
 const colors = require('zeelib/lib/colorize').default
 
-const format = ({ time, level, checks = [] }) => {
-  console.log(level)
-  console.log(time)
-  console.log(checks)
+const formatLevel = (level = 'secure') => {
+  const l = level || 'secure'
+  const cased = l.charAt(0).toUpperCase() + l.slice(1)
+  switch (cased) {
+    case 'Secure':
+    case 'Achievement':
+      return colors.green(cased)
+    case 'Notice':
+      return colors.blue(cased)
+    case 'Warning':
+      return colors.yellow(cased)
+    case 'Insecure':
+      return colors.red(cased)
+    case 'Easter-egg':
+      return colors.magenta(cased)
+    default:
+      return colors.gray(cased)
+  }
+}
+
+const formatChecks = (checks = []) => {
+  if (!checks || !checks.length) {
+    return ''
+  }
+  const formattedChecks = checks
+    .map(
+      ({ name, message, level }) =>
+        `
+${formatLevel(level)}
+${name}
+${message}
+    `
+    )
+    .join('')
+  return `
+----
+
+Checks:
+${formattedChecks}
+  `
+}
+
+const formatAndLog = ({ time, level, checks = [] }) => {
+  console.log('')
+  console.log(formatLevel(level))
+  console.log(`Time to crack: ${time}`)
+  console.log(formatChecks(checks))
 }
 
 const main = () => {
   const password = prompt('Password: ', { method: 'hide' })
   password.then((p) => {
     const result = h(p)
-    format(result)
+    formatAndLog(result)
   })
-
 }
 
-if (!module.parent) main()
+if (!module.parent) {
+  main()
+}

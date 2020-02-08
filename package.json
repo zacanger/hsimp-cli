@@ -16,9 +16,8 @@
   "bin": "./index.js",
   "scripts": {
     "preversion": "sortpack && npm t",
-    "test": "npm run test:lint && npm run test:tape",
-    "test:lint": "eslint",
-    "test:tape": "tape test.js"
+    "test": "npm run test:lint",
+    "test:lint": "eslint -c .eslintrc.json *.js"
   },
   "homepage": "https://github.com/zacanger/hsimp-cli#readme",
   "repository": {
@@ -28,9 +27,9 @@
   "bugs": "https://github.com/zacanger/hsimp-cli/issues",
   "keywords": [
     "cli",
+    "hsimp",
     "password",
-    "security",
-    "hsimp"
+    "security"
   ],
   "dependencies": {
     "hsimp": "1.0.1",
@@ -43,8 +42,7 @@
     "husky": "4.2.1",
     "lint-staged": "10.0.7",
     "prettier": "1.19.1",
-    "sortpack": "2.1.1",
-    "tape": "4.13.0"
+    "sortpack": "2.1.1"
   },
   "engines": {
     "node": ">=10.0.0"

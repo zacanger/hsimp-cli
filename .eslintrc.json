@@ -2,14 +2,15 @@
   "root": true,
   "extends": [
     "plugin:zacanger/recommended",
-    "plugin:zacanger/react",
     "plugin:zacanger/node",
-    "plugin:zacanger/typescript",
-    "plugin:zacanger/prettier-ts",
-    "plugin:zacanger/prettier",
-    "plugin:zacanger/jest"
+    "plugin:zacanger/prettier"
   ],
   "plugins": [
     "zacanger"
-  ]
+  ],
+  "rules": {
+    "fp/no-nil": 0,
+    "fp/no-unused-expression": 0,
+    "no-console": 0
+  }
 }
