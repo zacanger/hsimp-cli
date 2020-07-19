@@ -48,7 +48,7 @@ type Checks = {
   level: string
 }
 
-const formatChecks = (checks: Checks[] = []) => {
+const formatChecks = (checks: Array<Checks> = []) => {
   if (!checks || !checks.length) {
     return ''
   }
@@ -71,7 +71,7 @@ ${formattedChecks}
 type Result = {
   time: string
   level: string
-  checks: Checks[]
+  checks: Array<Checks>
 }
 
 const formatAndLog = ({ time, level, checks = [] }: Result) => {
